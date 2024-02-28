@@ -11,7 +11,7 @@ import openfl.display.Sprite;
 import openfl.events.Event;
 import openfl.display.StageScaleMode;
 #if android
-import haxe.io.Path
+import haxe.io.Path;
 #end
 
 using StringTools;
