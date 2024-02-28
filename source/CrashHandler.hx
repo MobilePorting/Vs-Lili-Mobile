@@ -87,9 +87,6 @@ class CrashHandler
 
 	private static inline function onCriticalError(error:Dynamic):Void
 	{
-		#if android
-		if (!errored) {
-		#end
 		final log:Array<String> = [Std.isOfType(error, String) ? error : Std.string(error)];
 
 		for (item in CallStack.exceptionStack(true))
