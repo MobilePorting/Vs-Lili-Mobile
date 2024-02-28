@@ -167,6 +167,7 @@
 
         <haxedef name='no-deprecation-warnings' />
 	<haxedef name='no-inline' if="html5"/>
+	<haxedef name="NO_PRECOMPILED_HEADERS" if="linux" />
 
         <!--Always enable Null Object Reference check-->
 		<haxedef name="HXCPP_CHECK_POINTER" />
