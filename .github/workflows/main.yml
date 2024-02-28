@@ -158,7 +158,7 @@ jobs:
           cd export/release/ios/build/*-iphoneos
           mkdir Payload
           mv *.app Payload
-          zip -r HorrorPackage.ipa Payload
+          zip -r vsLili.ipa Payload
 
       - name: Upload Artifact
         if: ${{ success() }}
