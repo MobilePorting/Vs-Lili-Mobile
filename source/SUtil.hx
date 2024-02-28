@@ -1,5 +1,8 @@
 package;
 
+#if android
+import android.content.Context as AndroidContext;
+#end
 import haxe.Exception;
 import haxe.io.Path;
 import lime.system.System as LimeSystem;
