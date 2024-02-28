@@ -10,6 +10,9 @@ import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
 import openfl.display.StageScaleMode;
+#if android
+import haxe.io.Path
+#end
 
 using StringTools;
 
@@ -29,11 +32,25 @@ class Main extends Sprite
 	public static function main():Void
 	{
 		Lib.current.addChild(new Main());
+                #if cpp
+		cpp.NativeGc.enable(true);
+		#end
 	}
 
 	public function new()
 	{
 		super();
+
+                CrashHandler.init();
+
+		#if windows
+		@:functionCode("
+		#include <windows.h>
+		#include <winuser.h>
+		setProcessDPIAware() // allows for more crisp visuals
+		DisableProcessWindowsGhosting() // lets you move the window and such if it's not responding
+		")
+		#end
 
 		if (stage != null)
 		{
@@ -57,6 +74,9 @@ class Main extends Sprite
 
 	private function setupGame():Void
 	{
+                #if mobile
+                Sys.setCwd(#if (android)Path.addTrailingSlash(#end SUtil.getStorageDirectory()#if (android))#end);
+                #end
 		var stageWidth:Int = Lib.current.stage.stageWidth;
 		var stageHeight:Int = Lib.current.stage.stageHeight;
 
@@ -84,5 +104,12 @@ class Main extends Sprite
 		FlxG.autoPause = false;
 		FlxG.mouse.visible = false;
 		#end
+
+                #if !mobile FlxG.mouse.useSystemCursor = true; #elseif android FlxG.android.preventDefaultKeys = [BACK]; #end
+
+                FlxG.signals.gameResized.add(function (w, h) {
+			if(fpsVar != null)
+				fpsVar.positionFPS(10, 3, Math.min(w / FlxG.width, h / FlxG.height));
+                });
 	}
 }

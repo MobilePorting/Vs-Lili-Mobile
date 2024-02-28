@@ -365,14 +365,11 @@ class MainMenuState extends MusicBeatState
 					});
 				
 			}
-			#if desktop
-			if(ClientPrefs.storycomplete)
-			{
+			#if (desktop && !officialBuild)
 			if (FlxG.keys.anyJustPressed(debugKeys))
 			{
 				selectedSomethin = true;
 				MusicBeatState.switchState(new MasterEditorMenu());
-			}
 			}
 			#end
 		}

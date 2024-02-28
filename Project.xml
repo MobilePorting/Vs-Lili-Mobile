@@ -119,6 +119,7 @@
 	<!--<haxelib name="polymod"/> -->
 	<haxelib name="discord_rpc" if="desktop"/>
 	<!-- <haxelib name="hxcpp-debug-server" if="desktop"/> -->
+        <haxelib name="extension-androidtools" if="android"/>
 
 	<!-- <haxelib name="markdown" /> -->
 	<!-- <haxelib name="HtmlParser" /> -->
@@ -166,6 +167,24 @@
 
         <haxedef name='no-deprecation-warnings' />
 	<haxedef name='no-inline' if="html5"/>
+
+        <!--Always enable Null Object Reference check-->
+		<haxedef name="HXCPP_CHECK_POINTER" />
+		<haxedef name="HXCPP_STACK_LINE" />
+		<haxedef name="HXCPP_STACK_TRACE" />
+	
+		<section if="android">
+			<!-- Do whatever you want I'm tired uninstall and install everytime -->
+			<certificate path="key.keystore" password="nullfunni" alias="null" alias-password="nullfunni" unless="debug" />
+
+			<!--Target SDK-->
+			<android target-sdk-version="30" />
+		</section>
+
+		<section if="ios">
+			<define name='objc' />
+			<ios linker-flags='-ObjC' />
+		</section>
 
 	<!-- _________________________________ Custom _______________________________ -->
 
