@@ -12,6 +12,8 @@ import sys.io.File;
 import sys.FileSystem;
 #end
 
+using StringTools;
+
 /**
  * A storage class for mobile.
  * @author Mihai Alexandru (M.A. Jigsaw) and Lily (mcagabe19)
@@ -73,6 +75,27 @@ class SUtil
 	}
 	#end
 
+    public static function readDirectory(directory:String):Array<String>
+    {
+        #if MODS_ALLOWED
+        return FileSystem.readDirectory(directory);
+        #else
+        var dirsWithNoLibrary = openfl.utils.Assets.list().filter(folder -> folder.startsWith(directory));
+        var dirsWithLibrary:Array<String> = [];
+        for(dir in dirsWithNoLibrary)
+        {
+            @:privateAccess
+            for(library in lime.utils.Assets.libraries.keys())
+            {
+                if(openfl.utils.Assets.exists('$library:$dir') && library != 'default' && (!dirsWithLibrary.contains('$library:$dir') || !dirsWithLibrary.contains(dir)))
+                    dirsWithLibrary.push('$library:$dir');
+                else if(openfl.utils.Assets.exists(dir) && !dirsWithLibrary.contains(dir))
+                        dirsWithLibrary.push(dir);
+            }
+        }
+        return dirsWithLibrary;
+        #end
+    }
 	public static function showPopUp(message:String, title:String #if android, ?positiveText:String = "OK", ?positiveFunc:Void->Void #end):Void
 	{
 		#if (android || windows || web)

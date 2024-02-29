@@ -672,20 +672,20 @@ class PlayState extends MusicBeatState
 		var filesPushed:Array<String> = [];
 		var foldersToCheck:Array<String> = [Paths.getPreloadPath('scripts/')];
 
-		#if MODS_ALLOWED
+                #if MODS_ALLOWED
 		foldersToCheck.insert(0, Paths.mods('scripts/'));
 		if(Paths.currentModDirectory != null && Paths.currentModDirectory.length > 0)
 			foldersToCheck.insert(0, Paths.mods(Paths.currentModDirectory + '/scripts/'));
 
 		for(mod in Paths.getGlobalMods())
 			foldersToCheck.insert(0, Paths.mods(mod + '/scripts/'));
-		
+                #end
 
 		for (folder in foldersToCheck)
 		{
-			if(FileSystem.exists(folder))
-			{
-				for (file in FileSystem.readDirectory(folder))
+			//if(#if MODS_ALLOWED FileSystem.exists#else OpenFlAssets.exists#end(folder))
+			//{
+				for (file in SUtil.readDirectory(folder))
 				{
 					if(file.endsWith('.lua') && !filesPushed.contains(file))
 					{
@@ -693,12 +693,9 @@ class PlayState extends MusicBeatState
 						filesPushed.push(file);
 					}
 				}
-			}
+			//}
 		}
-		#else
-		// TODO: OPENFL SCRIPT LOADER
-		#end
-		#end
+                #end
 
 		// STAGE SCRIPTS
 		#if LUA_ALLOWED
@@ -981,7 +978,7 @@ class PlayState extends MusicBeatState
 		// Para el recuadro de la informacion de la canción
 		if (OpenFlAssets.exists(Paths.txt(SONG.song.toLowerCase().replace(' ', '-') + "/info")))
 			{
-				trace('it exists');
+				//trace('it exists');
 				task = new SongInfo(0, 200, SONG.song.toLowerCase().replace(' ', '-'));
 				task.cameras = [camOther];
 				add(task);
@@ -1062,19 +1059,20 @@ class PlayState extends MusicBeatState
 		var filesPushed:Array<String> = [];
 		var foldersToCheck:Array<String> = [Paths.getPreloadPath('data/' + Paths.formatToSongPath(SONG.song) + '/')];
 
-		#if MODS_ALLOWED
+                #if MODS_ALLOWED
 		foldersToCheck.insert(0, Paths.mods('data/' + Paths.formatToSongPath(SONG.song) + '/'));
 		if(Paths.currentModDirectory != null && Paths.currentModDirectory.length > 0)
 			foldersToCheck.insert(0, Paths.mods(Paths.currentModDirectory + '/data/' + Paths.formatToSongPath(SONG.song) + '/'));
 
 		for(mod in Paths.getGlobalMods())
 			foldersToCheck.insert(0, Paths.mods(mod + '/data/' + Paths.formatToSongPath(SONG.song) + '/' ));// using push instead of insert because these should run after everything else
+                #end
 
 		for (folder in foldersToCheck)
 		{
-			if(FileSystem.exists(folder))
-			{
-				for (file in FileSystem.readDirectory(folder))
+			//if(#if MODS_ALLOWED FileSystem.exists#else OpenFlAssets.exists#end(folder))
+			//{
+				for (file in SUtil.readDirectory(folder))
 				{
 					if(file.endsWith('.lua') && !filesPushed.contains(file))
 					{
@@ -1082,11 +1080,8 @@ class PlayState extends MusicBeatState
 						filesPushed.push(file);
 					}
 				}
-			}
+			//}
 		}
-		#else
-		// TODO: OPENFL SCRIPT LOADER
-		#end
 		#end
 
 		var daSong:String = Paths.formatToSongPath(curSong);

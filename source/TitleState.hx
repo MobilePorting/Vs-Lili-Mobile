@@ -102,7 +102,7 @@ class TitleState extends MusicBeatState
 		/*#if (polymod && !html5)
 		if (sys.FileSystem.exists('mods/')) {
 			var folders:Array<String> = [];
-			for (file in sys.FileSystem.readDirectory('mods/')) {
+			for (file in sys.SUtil.readDirectory('mods/')) {
 				var path = haxe.io.Path.join(['mods/', file]);
 				if (sys.FileSystem.isDirectory(path)) {
 					folders.push(file);
