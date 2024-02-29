@@ -683,17 +683,17 @@ class PlayState extends MusicBeatState
 
 		for (folder in foldersToCheck)
 		{
-			//if(#if MODS_ALLOWED FileSystem.exists#else OpenFlAssets.exists#end(folder))
-			//{
+			if(#if MODS_ALLOWED FileSystem.exists(folder) #else OpenFlAssets.exists(folder) #end)
+			{
 				for (file in SUtil.readDirectory(folder))
 				{
 					if(file.endsWith('.lua') && !filesPushed.contains(file))
 					{
-						luaArray.push(new FunkinLua(folder + file));
+						luaArray.push(new FunkinLua(#if MODS_ALLOWED folder + #end file));
 						filesPushed.push(file);
 					}
 				}
-			//}
+			}
 		}
                 #end
 
@@ -1070,17 +1070,17 @@ class PlayState extends MusicBeatState
 
 		for (folder in foldersToCheck)
 		{
-			//if(#if MODS_ALLOWED FileSystem.exists#else OpenFlAssets.exists#end(folder))
-			//{
+			if(#if MODS_ALLOWED FileSystem.exists(folder) #else OpenFlAssets.exists(folder) #end)
+			{
 				for (file in SUtil.readDirectory(folder))
 				{
 					if(file.endsWith('.lua') && !filesPushed.contains(file))
 					{
-						luaArray.push(new FunkinLua(folder + file));
+						luaArray.push(new FunkinLua(#if MODS_ALLOWED folder + #end file));
 						filesPushed.push(file);
 					}
 				}
-			//}
+			}
 		}
 		#end
 
