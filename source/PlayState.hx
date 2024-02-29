@@ -391,7 +391,7 @@ class PlayState extends MusicBeatState
 		FlxG.cameras.reset(camGame);
 		FlxG.cameras.add(camHUD);
 		FlxG.cameras.add(camOther);
-		grpNoteSplashes = new FlxTypedGroup<NoteSplash>();
+		grpNoteSplashes = new FlxTypedGroup<NoteSplash>(8);
 
 		FlxCamera.defaultCameras = [camGame];
 		CustomFadeTransition.nextCamera = camOther;
@@ -679,7 +679,7 @@ class PlayState extends MusicBeatState
 
 		for(mod in Paths.getGlobalMods())
 			foldersToCheck.insert(0, Paths.mods(mod + '/scripts/'));
-		#end
+		
 
 		for (folder in foldersToCheck)
 		{
@@ -695,13 +695,16 @@ class PlayState extends MusicBeatState
 				}
 			}
 		}
+		#else
+		// TODO: OPENFL SCRIPT LOADER
+		#end
 		#end
 
-
 		// STAGE SCRIPTS
-		#if (MODS_ALLOWED && LUA_ALLOWED)
+		#if LUA_ALLOWED
 		var doPush:Bool = false;
 		var luaFile:String = 'stages/' + curStage + '.lua';
+		#if MODS_ALLOWED
 		if(FileSystem.exists(Paths.modFolders(luaFile))) {
 			luaFile = Paths.modFolders(luaFile);
 			doPush = true;
@@ -710,7 +713,13 @@ class PlayState extends MusicBeatState
 			if(FileSystem.exists(luaFile)) {
 				doPush = true;
 			}
+                }
+		#else
+		luaFile = Paths.getPreloadPath(luaFile);
+		if(OpenFlAssets.exists(luaFile)) {
+			doPush = true;
 		}
+		#end
 
 		if(doPush)
 			luaArray.push(new FunkinLua(luaFile));
@@ -970,7 +979,7 @@ class PlayState extends MusicBeatState
 		moveCameraSection();
 
 		// Para el recuadro de la informacion de la canción
-		if (Assets.exists(Paths.txt(SONG.song.toLowerCase().replace(' ', '-') + "/info")))
+		if (OpenFlAssets.exists(Paths.txt(SONG.song.toLowerCase().replace(' ', '-') + "/info")))
 			{
 				trace('it exists');
 				task = new SongInfo(0, 200, SONG.song.toLowerCase().replace(' ', '-'));
@@ -1060,7 +1069,6 @@ class PlayState extends MusicBeatState
 
 		for(mod in Paths.getGlobalMods())
 			foldersToCheck.insert(0, Paths.mods(mod + '/data/' + Paths.formatToSongPath(SONG.song) + '/' ));// using push instead of insert because these should run after everything else
-		#end
 
 		for (folder in foldersToCheck)
 		{
@@ -1076,6 +1084,9 @@ class PlayState extends MusicBeatState
 				}
 			}
 		}
+		#else
+		// TODO: OPENFL SCRIPT LOADER
+		#end
 		#end
 
 		var daSong:String = Paths.formatToSongPath(curSong);
@@ -1296,7 +1307,7 @@ class PlayState extends MusicBeatState
 		}
 		#else
 		luaFile = Paths.getPreloadPath(luaFile);
-		if(Assets.exists(luaFile)) {
+		if(OpenFlAssets.exists(luaFile)) {
 			doPush = true;
 		}
 		#end
