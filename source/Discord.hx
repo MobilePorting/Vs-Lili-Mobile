@@ -1,5 +1,6 @@
 package;
 
+#if desktop
 import Sys.sleep as eep;
 import lime.app.Application;
 import hxdiscord_rpc.Discord;
@@ -127,3 +128,4 @@ class DiscordClient
 	}
 	#end
 }
+#end
