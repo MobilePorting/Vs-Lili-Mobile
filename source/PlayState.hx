@@ -3294,8 +3294,8 @@ class PlayState extends MusicBeatState
 
                         case 'Camera Flash':
                                 var val2:Float = Std.parseFloat(value2);
-                                var val1:FlxColor = value1;
-                                if(!val1.startsWith('0x')) val1 = '0xff' + val1;
+                                var val1:FlxColor = FlxColor.fromString(value1);
+                                //if(!val1.startsWith('0x')) val1 = '0xff' + val1;
                                 camOther.flash(val1, val2,null,true);
 				
 			case 'Red Vignette':
