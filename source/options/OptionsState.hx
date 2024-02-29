@@ -94,7 +94,7 @@ class OptionsState extends MusicBeatState
 	override function closeSubState() {
 		super.closeSubState();
 		ClientPrefs.saveSettings();
-                Paths.clearStoredMemory();
+                //Paths.clearStoredMemory();
                 Paths.clearUnusedMemory();
 	}
 
