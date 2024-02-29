@@ -94,6 +94,9 @@ class MainMenuState extends MusicBeatState
 	var loadedWeeks:Array<WeekData> = [];
 	override function create()
 	{
+                Paths.clearStoredMemory();
+                Paths.clearUnusedMemory();
+
 		if (!ClientPrefs.storycomplete)
 		{
 			optionShit.remove('freeplay');
