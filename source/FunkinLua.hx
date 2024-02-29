@@ -76,11 +76,13 @@ class FunkinLua {
 
 		//LuaL.dostring(lua, CLENSE);
 		try{
-                        #if MODS_ALLOWED
-			var result:Dynamic = LuaL.dofile(lua, script);
-                        #else
-                        var result:Dynamic = LuaL.dostring(lua, Assets.getText(script));
-                        #end
+			trace(script);
+            		var isString:Bool = !FileSystem.exists(script);
+			var result:Dynamic = null;
+			if(!isString)
+				result = LuaL.dofile(lua, script);
+			else
+				result = LuaL.dostring(lua, Assets.getText(script));
 			var resultStr:String = Lua.tostring(lua, result);
 			if(resultStr != null && result != 0) {
 				trace('Error on lua script! ' + resultStr);
