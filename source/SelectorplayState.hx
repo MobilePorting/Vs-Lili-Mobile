@@ -118,7 +118,7 @@ class SelectorplayState extends MusicBeatState
                 {
                     selectedSomethin = true;
                     FlxG.sound.play(Paths.sound('cancelMenu'));
-                    MusicBeatState.switchState(new MainMenuState());
+                    FlxG.switchState(() -> new MainMenuState());
                 }
 
                 if (controls.ACCEPT)
@@ -147,11 +147,11 @@ class SelectorplayState extends MusicBeatState
                                     switch (daChoice)
                                     {
                                         case 'story_mode':
-                                            MusicBeatState.switchState(new FreeplayState(daChoice));
+                                            FlxG.switchState(() -> new FreeplayState(daChoice));
                                         case 'extra':
-                                            MusicBeatState.switchState(new FreeplayState(daChoice));
+                                            FlxG.switchState(() -> new FreeplayState(daChoice));
                                         case 'cover':
-                                            MusicBeatState.switchState(new FreeplayState(daChoice));
+                                            FlxG.switchState(() -> new FreeplayState(daChoice));
                                     }
                                 });
                             }

@@ -49,7 +49,6 @@ import openfl.display.StageQuality;
 import openfl.filters.BitmapFilter;
 import openfl.utils.Assets as OpenFlAssets;
 import editors.ChartingState;
-import editors.CharacterEditorState;
 import flixel.group.FlxSpriteGroup;
 import flixel.input.keyboard.FlxKey;
 import Note.EventNote;
@@ -2802,12 +2801,12 @@ class PlayState extends MusicBeatState
 		else
 			iconP2.animation.curAnim.curFrame = 0;
 
-		if (FlxG.keys.anyJustPressed(debugKeysCharacter) && !endingSong && !inCutscene && ClientPrefs.storycomplete) {
+		/*if (FlxG.keys.anyJustPressed(debugKeysCharacter) && !endingSong && !inCutscene && ClientPrefs.storycomplete) {
 			persistentUpdate = false;
 			paused = true;
 			cancelMusicFadeTween();
-			MusicBeatState.switchState(new CharacterEditorState(SONG.player2));
-		}
+			FlxG.switchState(() -> new CharacterEditorState(SONG.player2));
+		}*/
 
 		if (startingSong)
 		{
@@ -3053,7 +3052,7 @@ class PlayState extends MusicBeatState
 		{
 			// gitaroo man easter egg
 			cancelMusicFadeTween();
-			MusicBeatState.switchState(new GitarooPause());
+			FlxG.switchState(() -> new GitarooPause());
 		}
 		else {*/
 		if(FlxG.sound.music != null) {
@@ -3073,7 +3072,7 @@ class PlayState extends MusicBeatState
 		persistentUpdate = false;
 		paused = true;
 		cancelMusicFadeTween();
-		MusicBeatState.switchState(new ChartingState());
+		FlxG.switchState(() -> new ChartingState());
 		chartingMode = true;
 
 		#if desktop
@@ -3105,7 +3104,7 @@ class PlayState extends MusicBeatState
 				}
 				openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x - boyfriend.positionArray[0], boyfriend.getScreenPosition().y - boyfriend.positionArray[1], camFollowPos.x, camFollowPos.y));
 
-				// MusicBeatState.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
+				// FlxG.switchState(() -> new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 
 				#if desktop
 				// Game Over doesn't get his own variable because it's only used here
@@ -3890,7 +3889,7 @@ class PlayState extends MusicBeatState
 							CustomFadeTransition.nextCamera = null;
 						}
 						changedDifficulty = false;
-						MusicBeatState.switchState(new CreditsState());
+						FlxG.switchState(() -> new CreditsState());
 					}
 					else
 					{
@@ -3902,7 +3901,7 @@ class PlayState extends MusicBeatState
 							CustomFadeTransition.nextCamera = null;
 						}
 						changedDifficulty = false;
-						MusicBeatState.switchState(new MainMenuState());
+						FlxG.switchState(() -> new MainMenuState());
 					}
 					
 				}
@@ -3935,7 +3934,7 @@ class PlayState extends MusicBeatState
 				if(FlxTransitionableState.skipNextTransIn) {
 					CustomFadeTransition.nextCamera = null;
 				}
-				MusicBeatState.switchState(new SelectorplayState());
+				FlxG.switchState(() -> new SelectorplayState());
 				FlxG.sound.playMusic(Paths.music('freakyMenu'));
 				changedDifficulty = false;
 			}

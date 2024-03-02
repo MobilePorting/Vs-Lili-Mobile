@@ -19,7 +19,6 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import lime.app.Application;
 import Achievements;
-import editors.MasterEditorMenu;
 import flixel.input.keyboard.FlxKey;
 import flixel.group.FlxGroup;
 import flixel.addons.display.FlxBackdrop;
@@ -311,7 +310,7 @@ class MainMenuState extends MusicBeatState
 			{
 				selectedSomethin = true;
 				FlxG.sound.play(Paths.sound('cancelMenu'));
-				MusicBeatState.switchState(new TitleState());
+				FlxG.switchState(() -> new TitleState());
 			}
 
 			if (controls.ACCEPT)
@@ -353,15 +352,15 @@ class MainMenuState extends MusicBeatState
 										LoadingState.loadAndSwitchState(new PlayState(), true);
 										FreeplayState.destroyFreeplayVocals();
 									case 'freeplay':
-										MusicBeatState.switchState(new SelectorplayState());
+										FlxG.switchState(() -> new SelectorplayState());
 									#if MODS_ALLOWED
 									case 'mods':
-										MusicBeatState.switchState(new ModsMenuState());
+										FlxG.switchState(() -> new ModsMenuState());
 									#end
 									case 'awards':
-										MusicBeatState.switchState(new AchievementsMenuState());
+										FlxG.switchState(() -> new AchievementsMenuState());
 									case 'credits':
-										MusicBeatState.switchState(new CreditsState());
+										FlxG.switchState(() -> new CreditsState());
 									case 'options':
 										LoadingState.loadAndSwitchState(new options.OptionsState());
 								}
@@ -370,13 +369,6 @@ class MainMenuState extends MusicBeatState
 					});
 				
 			}
-			#if (desktop && !officialBuild)
-			if (FlxG.keys.anyJustPressed(debugKeys))
-			{
-				selectedSomethin = true;
-				MusicBeatState.switchState(new MasterEditorMenu());
-			}
-			#end
 		}
 
 		super.update(elapsed);

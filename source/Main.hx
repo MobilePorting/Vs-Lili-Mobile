@@ -105,13 +105,15 @@ class Main extends Sprite
 		FlxG.mouse.visible = false;
 		#end
 
-                #if !mobile FlxG.mouse.useSystemCursor = true; #elseif android FlxG.android.preventDefaultKeys = [BACK]; #end
+                FlxG.mouse.useSystemCursor = true;
+                #if android FlxG.android.preventDefaultKeys = [BACK]; #end
+                #if mobile lime.system.System.allowScreenTimeout = ClientPrefs.screensaver; #end
 
                 FlxG.signals.gameResized.add(function (w, h) {
 			if(fpsVar != null)
 				fpsVar.positionFPS(10, 3, Math.min(w / FlxG.width, h / FlxG.height));
                 });
 
-                ClientPrefs.saveSettings();
+                ClientPrefs.loadPrefs();
 	}
 }

@@ -41,6 +41,8 @@ class MobileControls extends FlxSpriteGroup
 				add(hitbox);
 			case 'Keyboard': // do nothing
 		}
+
+                alpha = ClientPrefs.controlsAlpha;
 	}
 
 	override public function destroy():Void
