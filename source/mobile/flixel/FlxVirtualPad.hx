@@ -195,7 +195,7 @@ class FlxVirtualPad extends FlxSpriteGroup
 	{
 		var graphic:FlxGraphic;
 
-		if (Assets.exists('assets/shared/images/virtualpad/${Graphic}.png'))
+		if (Assets.exists('shared:assets/shared/images/virtualpad/${Graphic}.png'))
 			graphic = FlxG.bitmap.add('shared:assets/shared/images/virtualpad/${Graphic}.png');
 		else
 			graphic = FlxG.bitmap.add('shared:assets/shared/images/virtualpad/default.png');
