@@ -174,6 +174,9 @@ class CreditsState extends MusicBeatState
 		bg.color = getCurrentBGColor();
 		intendedColor = bg.color;
 		changeSelection();
+
+                addVirtualPad(UP_DOWN, A_B);
+
 		super.create();
 	}
 

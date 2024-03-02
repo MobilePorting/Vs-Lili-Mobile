@@ -1067,6 +1067,9 @@ class PlayState extends MusicBeatState
 			foldersToCheck.insert(0, Paths.mods(mod + '/data/' + Paths.formatToSongPath(SONG.song) + '/' ));// using push instead of insert because these should run after everything else
                 #end
 
+                addMobileControls(false);
+                mobileControls.visible = true;
+
 		for (folder in foldersToCheck)
 		{
 			#if MODS_ALLOWED if(FileSystem.exists(folder)){ #end
@@ -1156,6 +1159,11 @@ class PlayState extends MusicBeatState
 				case 'ugh' | 'guns' | 'stress':
 					tankIntro();
 
+				case 'double-or-nothing' | 'electric' | 'glowing-future' | 'i-see-your-soul' | 'little-suprise' | 'my-history' | 'super-propulsor':
+				     var path = Paths.json(Paths.formatToSongPath(PlayState.SONG.song) + '/dialogue');
+				     var shit:DialogueFile = DialogueBoxPsych.parseDialogue(path);
+				     startDialogue(shit);
+
 				default:
 					startCountdown();
 			}
@@ -1192,6 +1200,11 @@ class PlayState extends MusicBeatState
 
 		Conductor.safeZoneOffset = (ClientPrefs.safeFrames / 60) * 1000;
 		callOnLuas('onCreatePost', []);
+
+                #if (!android)
+		addVirtualPad(NONE, P);
+    		addVirtualPadCamera(false);
+		#end
 
 		super.create();
 
@@ -2747,7 +2760,7 @@ class PlayState extends MusicBeatState
 			botplayTxt.alpha = 1 - Math.sin((Math.PI * botplaySine) / 180);
 		}
 
-		if (controls.PAUSE && startedCountdown && canPause)
+		if (#if android FlxG.android.justReleased.BACK || #else virtualPad.buttonP.justPressed || #end controls.PAUSE && startedCountdown && canPause)
 		{
 			var ret:Dynamic = callOnLuas('onPause', [], false);
 			if(ret != FunkinLua.Function_Stop) {
@@ -3778,6 +3791,7 @@ class PlayState extends MusicBeatState
 	public var transitioning = false;
 	public function endSong():Void
 	{
+                mobileControls.visible = #if !android virtualPad.visible = #end false;
 		//Should kill you if you tried to cheat
 		if(!startingSong) {
 			notes.forEach(function(daNote:Note) {
@@ -3846,6 +3860,20 @@ class PlayState extends MusicBeatState
 				campaignMisses += songMisses;
 
 				storyPlaylist.remove(storyPlaylist[0]);
+
+                                var daSong:String = Paths.formatToSongPath(curSong);
+				
+				if (!seenCutscene)
+		{
+			switch (daSong)
+			{
+				case 'super-propulsor':
+				     var path = Paths.json(Paths.formatToSongPath(PlayState.SONG.song) + '/dialogue2');
+				     var shit:DialogueFile = DialogueBoxPsych.parseDialogue(path);
+				     startDialogue(shit);
+			}
+			seenCutscene = true;
+		}
 
 				if (storyPlaylist.length <= 0)
 				{

@@ -23,13 +23,23 @@ class FlashingState extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
 
+                if (controls.mobileC) {
 		warnText = new FlxText(0, 0, FlxG.width,
 			"Thanks for downloading vs Lili!\n
 			This Mod contains strongs flashing lights!\n
 			If you are sensitive we recommend you not to play.\n
-			If you don't, press ESCAPE to ignore this message.\n
+			If you don't, touch your screen to ignore this message.\n
 			Have fun!",
 			32);
+                } else {
+                warnText = new FlxText(0, 0, FlxG.width,
+                        "Thanks for downloading vs Lili!\n
+                        This Mod contains strongs flashing lights!\n
+                        If you are sensitive we recommend you not to play.\n
+                        If you don't, press ESCAPE to ignore this message.\n
+                        Have fun!",
+                        32);
+                }
 		warnText.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
 		warnText.screenCenter(Y);
 		add(warnText);
@@ -39,7 +49,11 @@ class FlashingState extends MusicBeatState
 	{
 		if(!leftState) {
 			var back:Bool = controls.BACK;
-			if (controls.ACCEPT || back) {
+                        var justTouched:Bool = false;
+		for (touch in FlxG.touches.list)
+			if (touch.justPressed)
+				justTouched = true;
+			if (justTouched || controls.ACCEPT || back) {
 				leftState = true;
 				FlxTransitionableState.skipNextTransIn = true;
 				FlxTransitionableState.skipNextTransOut = true;

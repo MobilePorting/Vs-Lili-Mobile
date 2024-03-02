@@ -111,5 +111,7 @@ class Main extends Sprite
 			if(fpsVar != null)
 				fpsVar.positionFPS(10, 3, Math.min(w / FlxG.width, h / FlxG.height));
                 });
+
+                ClientPrefs.saveSettings();
 	}
 }

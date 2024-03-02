@@ -25,6 +25,7 @@ import flixel.input.keyboard.FlxKey;
 import flixel.graphics.FlxGraphic;
 import Controls;
 
+
 using StringTools;
 
 class OptionsState extends MusicBeatState
@@ -35,9 +36,10 @@ class OptionsState extends MusicBeatState
 	public static var menuBG:FlxSprite;
 
 	function openSelectedSubstate(label:String) {
+                if (label != "Adjust Delay and Combo") removeVirtualPad();
 		switch(label) {
-			case 'Note Colors':
-				openSubState(new options.NotesSubState());
+			/*case 'Note Colors':
+				openSubState(new options.NotesSubState());*/
 			case 'Controls':
 				openSubState(new options.ControlsSubState());
 			case 'Graphics':
@@ -88,10 +90,22 @@ class OptionsState extends MusicBeatState
 		changeSelection();
 		ClientPrefs.saveSettings();
 
+                if (controls.mobileC) {
+                var tipText:FlxText = new FlxText(10, 12, 0, 'Press C To Go In Mobile Controls Menu', 16);
+		tipText.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		tipText.borderSize = 2;
+		tipText.scrollFactor.set();
+		add(tipText); }
+
+                addVirtualPad(UP_DOWN, A_B_C);
+
 		super.create();
 	}
 
 	override function closeSubState() {
+                removeVirtualPad();
+                addVirtualPad(UP_DOWN, A_B_C);
+                persistentUpdate = true;
 		super.closeSubState();
 		ClientPrefs.saveSettings();
                 //Paths.clearStoredMemory();
@@ -100,6 +114,12 @@ class OptionsState extends MusicBeatState
 
 	override function update(elapsed:Float) {
 		super.update(elapsed);
+
+                if (virtualPad.buttonC.justPressed)
+		{
+		persistentUpdate = false;
+		openSubState(new mobile.MobileControlsSubState());
+		}
 
 		if (controls.UI_UP_P) {
 			changeSelection(-1);
