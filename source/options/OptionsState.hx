@@ -51,6 +51,7 @@ class OptionsState extends MusicBeatState
 			case 'Adjust Delay and Combo':
 				LoadingState.loadAndSwitchState(new options.NoteOffsetState());
 		}
+                persistentUpdate = false;
 	}
 
 	var selectorLeft:Alphabet;
