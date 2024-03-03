@@ -57,7 +57,7 @@ import flixel.effects.particles.FlxEmitter;
 import flixel.effects.particles.FlxParticle;
 import flixel.util.FlxSave;
 import animateatlas.AtlasFrameMaker;
-import Achievements;
+//import Achievements;
 import StageData;
 import FunkinLua;
 import DialogueBoxPsych;

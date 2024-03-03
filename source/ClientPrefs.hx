@@ -7,7 +7,7 @@ import flixel.graphics.FlxGraphic;
 import Controls;
 
 class ClientPrefs {
-    public static var controlsAlpha:Float = #if mobile 0.6 #else 0.001 #end;
+    public static var controlsAlpha:Float = FlxG.onMobile ? 0.6 : 0.001;
     public static var hideHitboxHints = false;
     public static var screensaver = false;
 	public static var downScroll:Bool = false;
@@ -128,8 +128,8 @@ class ClientPrefs {
 		FlxG.save.data.noReset = noReset;
 		FlxG.save.data.healthBarAlpha = healthBarAlpha;
 		FlxG.save.data.comboOffset = comboOffset;
-		FlxG.save.data.achievementsMap = Achievements.achievementsMap;
-		FlxG.save.data.henchmenDeath = Achievements.henchmenDeath;
+		/*FlxG.save.data.achievementsMap = Achievements.achievementsMap;
+		FlxG.save.data.henchmenDeath = Achievements.henchmenDeath;*/
 
 		FlxG.save.data.ratingOffset = ratingOffset;
 		FlxG.save.data.sickWindow = sickWindow;

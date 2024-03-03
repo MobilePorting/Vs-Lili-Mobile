@@ -18,7 +18,7 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import lime.app.Application;
-import Achievements;
+//import Achievements;
 import flixel.input.keyboard.FlxKey;
 import flixel.group.FlxGroup;
 import flixel.addons.display.FlxBackdrop;
@@ -357,8 +357,8 @@ class MainMenuState extends MusicBeatState
 									case 'mods':
 										FlxG.switchState(() -> new ModsMenuState());
 									#end
-									case 'awards':
-										FlxG.switchState(() -> new AchievementsMenuState());
+									/*case 'awards':
+										FlxG.switchState(() -> new AchievementsMenuState());*/
 									case 'credits':
 										FlxG.switchState(() -> new CreditsState());
 									case 'options':
