@@ -1,28 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <TextureAtlas imagePath="vignette_red.png">
-	<!-- Created with Adobe Animate version 22.0.4.185 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="vignette_idle0000" x="0" y="0" width="1920" height="1080"/>
-	<SubTexture name="vignette_idle0001" x="1920" y="0" width="1893" height="1065" frameX="-14" frameY="-7" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0002" x="3813" y="0" width="1867" height="1051" frameX="-27" frameY="-14" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0003" x="5680" y="0" width="1841" height="1035" frameX="-40" frameY="-22" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0004" x="0" y="1080" width="1813" height="1021" frameX="-54" frameY="-29" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0005" x="1813" y="1080" width="1787" height="1005" frameX="-67" frameY="-37" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0006" x="3600" y="1080" width="1761" height="991" frameX="-80" frameY="-44" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0007" x="5361" y="1080" width="1734" height="975" frameX="-93" frameY="-52" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0008" x="0" y="2101" width="1707" height="961" frameX="-107" frameY="-59" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0009" x="1707" y="2101" width="1681" height="945" frameX="-120" frameY="-67" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0010" x="3388" y="2101" width="1655" height="931" frameX="-133" frameY="-74" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0011" x="5043" y="2101" width="1627" height="915" frameX="-147" frameY="-82" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0012" x="3388" y="2101" width="1655" height="931" frameX="-133" frameY="-74" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0013" x="1707" y="2101" width="1681" height="945" frameX="-120" frameY="-67" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0014" x="0" y="2101" width="1707" height="961" frameX="-107" frameY="-59" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0015" x="5361" y="1080" width="1734" height="975" frameX="-93" frameY="-52" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0016" x="3600" y="1080" width="1761" height="991" frameX="-80" frameY="-44" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0017" x="1813" y="1080" width="1787" height="1005" frameX="-67" frameY="-37" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0018" x="0" y="1080" width="1813" height="1021" frameX="-54" frameY="-29" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0019" x="5680" y="0" width="1841" height="1035" frameX="-40" frameY="-22" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0020" x="3813" y="0" width="1867" height="1051" frameX="-27" frameY="-14" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0021" x="1920" y="0" width="1893" height="1065" frameX="-14" frameY="-7" frameWidth="1920" frameHeight="1080"/>
-	<SubTexture name="vignette_idle0022" x="0" y="0" width="1920" height="1080"/>
+<SubTexture name="vignette_idle0000" x="0" y="0" width="1920" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0001" x="1920" y="0" width="1893" height="1065" frameX="-14" frameY="-7" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0002" x="0" y="1080" width="1867" height="1050" frameX="-27" frameY="-14" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0003" x="1867" y="1080" width="1840" height="1035" frameX="-40" frameY="-22" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0004" x="0" y="2130" width="1813" height="1021" frameX="-54" frameY="-29" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0005" x="1813" y="2130" width="1787" height="1005" frameX="-67" frameY="-37" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0006" x="3813" y="0" width="1761" height="990" frameX="-80" frameY="-44" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0007" x="3813" y="990" width="1734" height="975" frameX="-93" frameY="-52" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0008" x="3813" y="1965" width="1707" height="961" frameX="-107" frameY="-59" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0009" x="0" y="3151" width="1681" height="945" frameX="-120" frameY="-67" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0010" x="1681" y="3151" width="1655" height="931" frameX="-133" frameY="-74" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0011" x="3336" y="3151" width="1627" height="915" frameX="-147" frameY="-82" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0012" x="1681" y="3151" width="1655" height="931" frameX="-133" frameY="-74" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0013" x="0" y="3151" width="1681" height="945" frameX="-120" frameY="-67" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0014" x="3813" y="1965" width="1707" height="961" frameX="-107" frameY="-59" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0015" x="3813" y="990" width="1734" height="975" frameX="-93" frameY="-52" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0016" x="3813" y="0" width="1761" height="990" frameX="-80" frameY="-44" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0017" x="1813" y="2130" width="1787" height="1005" frameX="-67" frameY="-37" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0018" x="0" y="2130" width="1813" height="1021" frameX="-54" frameY="-29" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0019" x="1867" y="1080" width="1840" height="1035" frameX="-40" frameY="-22" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0020" x="0" y="1080" width="1867" height="1050" frameX="-27" frameY="-14" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0021" x="1920" y="0" width="1893" height="1065" frameX="-14" frameY="-7" frameWidth="1920" frameHeight="1080" />
+<SubTexture name="vignette_idle0022" x="0" y="0" width="1920" height="1080" frameX="0" frameY="0" frameWidth="1920" frameHeight="1080" />
 </TextureAtlas>

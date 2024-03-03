@@ -161,7 +161,7 @@ class MainMenuState extends MusicBeatState
 		if (ClientPrefs.storycomplete)
 		{
 		lili = new FlxSprite(0, 150);
-		lili.frames = Paths.getSparrowAtlas('lili_main_menu');
+		lili.frames = Paths.getSparrowAtlas('personajesBG/lili_bg', lili);
 		lili.animation.addByPrefix('idle',"lili gf idle");
 		lili.animation.play("idle");
 		lili.scale.set(0.75, 0.75);

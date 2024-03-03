@@ -1,7 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <TextureAtlas imagePath="story_mode.png">
-	<!-- Created with Adobe Animate version 22.0.4.185 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="Story mode no selected0000" x="0" y="0" width="723" height="219"/>
-	<SubTexture name="Story mode selected0000" x="0" y="219" width="723" height="220"/>
+<SubTexture name="Story mode no selected0000" x="0" y="220" width="723" height="219" frameX="0" frameY="0" frameWidth="723" frameHeight="219" />
+<SubTexture name="Story mode selected0000" x="0" y="0" width="723" height="220" frameX="0" frameY="0" frameWidth="723" frameHeight="220" />
 </TextureAtlas>

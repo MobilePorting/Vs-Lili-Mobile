@@ -1,7 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <TextureAtlas imagePath="menu_freeplay.png">
-	<!-- Created with Adobe Animate version 22.0.4.185 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="freeplay basic0000" x="0" y="0" width="681" height="123"/>
-	<SubTexture name="freeplay white0000" x="0" y="123" width="681" height="123"/>
+<SubTexture name="freeplay basic0000" x="0" y="0" width="680" height="123" frameX="0" frameY="0" frameWidth="681" frameHeight="123" />
+<SubTexture name="freeplay white0000" x="680" y="0" width="681" height="123" frameX="0" frameY="0" frameWidth="681" frameHeight="123" />
 </TextureAtlas>
