@@ -195,10 +195,10 @@ class FlxVirtualPad extends FlxSpriteGroup
 	{
 		var graphic:FlxGraphic;
 
-		if (Assets.exists('shared:assets/shared/images/virtualpad/${Graphic}.png'))
-			graphic = FlxG.bitmap.add('shared:assets/shared/images/virtualpad/${Graphic}.png');
+		if (Assets.exists('assets/mobile/virtualpad/${Graphic}.png'))
+			graphic = FlxG.bitmap.add('assets/mobile/virtualpad/${Graphic}.png');
 		else
-			graphic = FlxG.bitmap.add('shared:assets/shared/images/virtualpad/default.png');
+			graphic = FlxG.bitmap.add('assets/mobile/virtualpad/default.png');
 
 		var button:FlxButton = new FlxButton(X, Y);
 		try {
@@ -214,7 +214,7 @@ class FlxVirtualPad extends FlxSpriteGroup
                 button.antialiasing = ClientPrefs.globalAntialiasing;
 		button.scrollFactor.set();
 		button.color = Color;
-		button.alpha = 0.5;
+		button.alpha = 1;
 		#if FLX_DEBUG
 		button.ignoreDrawDebug = true;
 		#end

@@ -39,6 +39,7 @@ class MusicBeatSubstate extends FlxSubState
 			removeVirtualPad();
 
 		virtualPad = new FlxVirtualPad(DPad, Action);
+                virtualPad.alpha = ClientPrefs.controlsAlpha;
 		add(virtualPad);
 
 		controls.setVirtualPadUI(virtualPad, DPad, Action);

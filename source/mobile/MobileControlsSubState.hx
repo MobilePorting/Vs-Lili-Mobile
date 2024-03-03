@@ -53,6 +53,8 @@ class MobileControlsSubState extends FlxSubState
 			if (controlsItems[Math.floor(curSelected)] == 'Pad-Custom')
 				MobileControls.customVirtualPad = virtualPad;
 
+                        FlxG.sound.play(Paths.sound('cancelMenu'));
+
 			close();
 		});
 		exitButton.setGraphicSize(Std.int(exitButton.width) * 3);
@@ -68,6 +70,8 @@ class MobileControlsSubState extends FlxSubState
 				MobileControls.customVirtualPad = new FlxVirtualPad(RIGHT_FULL, NONE);
 				reloadMobileControls('Pad-Custom');
 			}
+
+                        FlxG.sound.play(Paths.sound('cancelMenu'));
 		});
 		resetButton.setGraphicSize(Std.int(resetButton.width) * 3);
 		resetButton.label.setFormat(Paths.font('vcr.ttf'), 21, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE,

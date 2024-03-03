@@ -1084,7 +1084,7 @@ class PlayState extends MusicBeatState
 		}
 		#end
 
-		var daSong:String = Paths.formatToSongPath(curSong).toLowerCase().replace(' ', '-');
+		var daSong:String = Paths.formatToSongPath(curSong);
 
 		switch (daSong)
 			{
@@ -3860,7 +3860,7 @@ class PlayState extends MusicBeatState
 
 				storyPlaylist.remove(storyPlaylist[0]);
 
-                                var daSong:String = Paths.formatToSongPath(curSong).toLowerCase().replace(' ', '-');
+                                var daSong:String = Paths.formatToSongPath(curSong);
 				
 				if (!seenCutscene)
 		{

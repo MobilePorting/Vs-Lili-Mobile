@@ -34,7 +34,7 @@ class ClientPrefs {
 	public static var controllerMode:Bool = #if mobile true #else false #end;
 	public static var hitsoundVolume:Float = 0;
 	//Lili cosos
-	public static var storycomplete:Bool = false;
+	public static var storycomplete:Bool = #if web true #else false #end;
 	// Poniendo a Lili lofi por defecto
 	public static var pauseMusic:String = 'Lili lofi';
 	public static var checkForUpdates:Bool = false;

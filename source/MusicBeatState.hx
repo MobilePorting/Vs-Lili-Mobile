@@ -45,6 +45,7 @@ class MusicBeatState extends FlxUIState
 			removeVirtualPad();
 
 		virtualPad = new FlxVirtualPad(DPad, Action);
+                virtualPad.alpha = ClientPrefs.controlsAlpha;
 		add(virtualPad);
 
 		controls.setVirtualPadUI(virtualPad, DPad, Action);
@@ -67,6 +68,7 @@ class MusicBeatState extends FlxUIState
 			removeMobileControls();
 
 		mobileControls = new MobileControls();
+                mobileControls.alpha = ClientPrefs.controlsAlpha;
 
 		switch (MobileControls.mode)
 		{

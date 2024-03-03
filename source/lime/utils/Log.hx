@@ -2,6 +2,7 @@ package lime.utils;
 
 import haxe.Exception;
 import haxe.PosInfos;
+import flixel.FlxG;
 #if sys
 import sys.io.File;
 import sys.FileSystem;

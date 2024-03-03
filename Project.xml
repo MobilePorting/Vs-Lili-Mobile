@@ -57,6 +57,8 @@
 		<assets path="assets/secrets" rename="assets" exclude="*.mp3"  unless="web"/>
 	</section>
 
+        <assets path="mobile" rename="assets/mobile" />
+
 	<!-- DONT ENABLE THIS -->
 	<!-- <define name="CHECK_FOR_UPDATES" if="desktop officialBuild"/> -->
 
