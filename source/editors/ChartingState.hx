@@ -45,10 +45,10 @@ import lime.media.AudioBuffer;
 import haxe.io.Bytes;
 import flash.geom.Rectangle;
 import flixel.util.FlxSort;
-#if sys
+import flash.media.Sound;
+#if MODS_ALLOWED
 import sys.io.File;
 import sys.FileSystem;
-import flash.media.Sound;
 #end
 
 using StringTools;
@@ -453,8 +453,8 @@ class ChartingState extends MusicBeatState
 
 			var songName:String = Paths.formatToSongPath(_song.song);
 			var file:String = Paths.json(songName + '/events');
-			#if sys
-			if (#if MODS_ALLOWED FileSystem.exists(Paths.modsJson(songName + '/events')) || #end FileSystem.exists(file))
+			#if MODS_ALLLWED
+			if (#FileSystem.exists(Paths.modsJson(songName + '/events')) || FileSystem.exists(file))
 			#else
 			if (OpenFlAssets.exists(file))
 			#end

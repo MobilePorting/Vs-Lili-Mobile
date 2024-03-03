@@ -1,7 +1,7 @@
 // Tomado de vs impostor v5, no me funen :c
 package;
 
-#if sys
+#if MODS_ALLOWED
 import sys.io.File;
 #end
 
