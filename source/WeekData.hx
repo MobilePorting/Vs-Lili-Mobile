@@ -208,16 +208,14 @@ class WeekData {
 
 	private static function getWeekFile(path:String):WeekFile {
 		var rawJson:String = null;
-		trace('getting week file Json data of $path');
 		#if MODS_ALLOWED
 		if(FileSystem.exists(path)) {
 			rawJson = File.getContent(path);
 		}
 		#else
 		if(OpenFlAssets.exists(path)) {
-			trace('found the week file of $path');
 			rawJson = Assets.getText(path);
-		} else trace('week file is missing fuck u openfl >:(');
+		}
 		#end
 
 		if(rawJson != null && rawJson.length > 0) {
