@@ -7,7 +7,7 @@ import openfl.events.ErrorEvent;
 import lime.utils.Log as LimeLogger;
 import openfl.events.UncaughtErrorEvent;
 import lime.system.System as LimeSystem;
-#if web
+#if js
 import flixel.FlxG;
 #elseif sys
 import sys.io.File;

@@ -2,7 +2,7 @@ package lime.utils;
 
 import haxe.Exception;
 import haxe.PosInfos;
-#if web
+#if js
 import flixel.FlxG;
 #elseif sys
 import sys.io.File;
