@@ -2298,7 +2298,7 @@ class FunkinLua {
 				var lePath:String = Paths.getPath(path, TEXT);
 				if(Assets.exists(lePath))
 				{
-					FileSystem.deleteFile(lePath);
+					#if MODS_ALLOWED FileSystem.deleteFile(lePath); #end
 					return true;
 				}
 			} catch (e:Dynamic) {
