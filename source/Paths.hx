@@ -355,7 +355,7 @@ class Paths
 			localTrackedAssets.push(path);
 			return currentTrackedAssets.get(path);
 		}
-		trace('Null por andar haciendo burradas xD');
+		trace('Null por andar haciendo burradas xD ($key)');
 		return null;
 	}
 
