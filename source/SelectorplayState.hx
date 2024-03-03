@@ -49,7 +49,7 @@ class SelectorplayState extends MusicBeatState
     var itemPosX:Array<Float> = [ 0, 0, 0];
 
     override function create(){
-        bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+        bg = new FlxSprite().loadGraphic(Paths.image('menuBG'));
         bg.antialiasing = ClientPrefs.globalAntialiasing;
 		add(bg);
 		bg.screenCenter();
