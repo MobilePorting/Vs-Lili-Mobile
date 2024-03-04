@@ -554,10 +554,10 @@ class PlayState extends MusicBeatState
 				outside.updateHitbox();
 				add(outside);
 
-				lilimadBG = new BGSprite('characters/lili_angry_bg', 1000, 0, 1, 1, ['lili seria idle'], true);
+				lilimadBG = new BGSprite('characters/lili_angry', 1000, 0, 1, 1, ['lili seria idle'], true);
 				add(lilimadBG);
 
-				lulumadBG = new BGSprite('characters/lulu_bg', 1300, 300, 1, 1, ['lulu idle'], true);
+				lulumadBG = new BGSprite('characters/lulu_sad', 1300, 300, 1, 1, ['lulu idle'], true);
 				lulumadBG.flipX = true;
 				lulumadBG.scale.set(0.7, 0.7);
 				add(lulumadBG);
@@ -568,10 +568,10 @@ class PlayState extends MusicBeatState
 				outside.updateHitbox();
 				add(outside);
 
-				bfmadBG = new BGSprite('characters/bf_mad_bg', 1200, 300, 1, 1, ['BF idle dance'], true);
+				bfmadBG = new BGSprite('characters/bf_mad', 1200, 300, 1, 1, ['BF idle dance'], true);
 				add(bfmadBG);
 
-				gfmadBG = new BGSprite('characters/gf_angry_bg', 1500, 200, 1, 1, ['GF idle dance'], true);
+				gfmadBG = new BGSprite('characters/gf_angry', 1500, 200, 1, 1, ['GF idle dance'], true);
 				gfmadBG.scale.set(0.8, 0.8);
 				add(gfmadBG);
 
