@@ -502,31 +502,6 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
-			case 'stage': //Week 1
-				var bg:BGSprite = new BGSprite('stageback', -600, -200, 0.9, 0.9);
-				add(bg);
-
-				var stageFront:BGSprite = new BGSprite('stagefront', -650, 600, 0.9, 0.9);
-				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
-				stageFront.updateHitbox();
-				add(stageFront);
-				if(!ClientPrefs.lowQuality) {
-					var stageLight:BGSprite = new BGSprite('stage_light', -125, -100, 0.9, 0.9);
-					stageLight.setGraphicSize(Std.int(stageLight.width * 1.1));
-					stageLight.updateHitbox();
-					add(stageLight);
-					var stageLight:BGSprite = new BGSprite('stage_light', 1225, -100, 0.9, 0.9);
-					stageLight.setGraphicSize(Std.int(stageLight.width * 1.1));
-					stageLight.updateHitbox();
-					stageLight.flipX = true;
-					add(stageLight);
-
-					var stageCurtains:BGSprite = new BGSprite('stagecurtains', -500, -300, 1.3, 1.3);
-					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
-					stageCurtains.updateHitbox();
-					add(stageCurtains);
-				}
-
 			//Fondos lili
 			case 'bed': //Para noche de chicas
 				bed = new BGSprite('fondos/bed', -700, -520, 0.9, 0.9);
@@ -546,7 +521,7 @@ class PlayState extends MusicBeatState
 				celos.updateHitbox();
 				add(celos);
 			
-			case 'house': //Solo funciona en Super propulsor
+			case 'stage' | 'house': //Solo funciona en Super propulsor
 				house = new BGSprite('fondos/house', -700, -520, 0.9, 0.9);
 				house.setGraphicSize(Std.int(house.width * 1.6));
 				house.updateHitbox();
@@ -558,7 +533,7 @@ class PlayState extends MusicBeatState
 				outside.updateHitbox();
 				add(outside);
 
-				liliBG = new BGSprite('personajesBG/lili_bg', 500, 0, 1, 1, ['lili gf idle'], true);
+				liliBG = new BGSprite('lili_bg', 500, 0, 1, 1, ['lili gf idle'], true);
 				add(liliBG);				
 			
 			case 'sala': //Para el cover de deep poems
@@ -579,10 +554,10 @@ class PlayState extends MusicBeatState
 				outside.updateHitbox();
 				add(outside);
 
-				lilimadBG = new BGSprite('personajesBG/lili_angry_bg', 1000, 0, 1, 1, ['lili seria idle'], true);
+				lilimadBG = new BGSprite('characters/lili_angry_bg', 1000, 0, 1, 1, ['lili seria idle'], true);
 				add(lilimadBG);
 
-				lulumadBG = new BGSprite('personajesBG/lulu_bg', 1300, 300, 1, 1, ['lulu idle'], true);
+				lulumadBG = new BGSprite('characters/lulu_bg', 1300, 300, 1, 1, ['lulu idle'], true);
 				lulumadBG.flipX = true;
 				lulumadBG.scale.set(0.7, 0.7);
 				add(lulumadBG);
@@ -593,10 +568,10 @@ class PlayState extends MusicBeatState
 				outside.updateHitbox();
 				add(outside);
 
-				bfmadBG = new BGSprite('personajesBG/bf_mad_bg', 1200, 300, 1, 1, ['BF idle dance'], true);
+				bfmadBG = new BGSprite('characters/bf_mad_bg', 1200, 300, 1, 1, ['BF idle dance'], true);
 				add(bfmadBG);
 
-				gfmadBG = new BGSprite('personajesBG/gf_angry_bg', 1500, 200, 1, 1, ['GF idle dance'], true);
+				gfmadBG = new BGSprite('characters/gf_angry_bg', 1500, 200, 1, 1, ['GF idle dance'], true);
 				gfmadBG.scale.set(0.8, 0.8);
 				add(gfmadBG);
 
