@@ -68,6 +68,9 @@ class ResetScoreSubState extends MusicBeatSubstate
 		noText.x += 200;
 		add(noText);
 		updateOptions();
+
+                addVirtualPad(LEFT_RIGHT, A_B);
+		addVirtualPadCamera(false);
 	}
 
 	override function update(elapsed:Float)
@@ -99,6 +102,10 @@ class ResetScoreSubState extends MusicBeatSubstate
 			}
 			FlxG.sound.play(Paths.sound('cancelMenu'), 1);
 			close();
+		}
+                if (virtualPad == null){ //sometimes it dosent add the vpad, hopefully this fixes it
+		addVirtualPad(LEFT_RIGHT, A_B);
+		addVirtualPadCamera(false);
 		}
 		super.update(elapsed);
 	}

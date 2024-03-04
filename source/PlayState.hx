@@ -3861,8 +3861,7 @@ class PlayState extends MusicBeatState
 				storyPlaylist.remove(storyPlaylist[0]);
 
                                 var daSong:String = Paths.formatToSongPath(curSong);
-				
-				if (!seenCutscene)
+
 		{
 			switch (daSong)
 			{
@@ -3871,7 +3870,6 @@ class PlayState extends MusicBeatState
 				     var shit:DialogueFile = DialogueBoxPsych.parseDialogue(path);
 				     startDialogue(shit);
 			}
-			seenCutscene = true;
 		}
 
 				if (storyPlaylist.length <= 0)
