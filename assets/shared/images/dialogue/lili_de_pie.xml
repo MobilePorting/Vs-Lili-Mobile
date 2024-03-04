@@ -1,10 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <TextureAtlas imagePath="lili_de_pie.png">
-	<!-- Created with Adobe Animate version 22.0.4.185 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="emotional0000" x="0" y="0" width="329" height="734"/>
-	<SubTexture name="happy0000" x="329" y="0" width="329" height="734"/>
-	<SubTexture name="insecure0000" x="658" y="0" width="329" height="734"/>
-	<SubTexture name="sad0000" x="987" y="0" width="329" height="734"/>
-	<SubTexture name="sigh0000" x="1316" y="0" width="329" height="734"/>
+<SubTexture name="emotional0000" x="648" y="0" width="324" height="720" frameX="0" frameY="-5" frameWidth="329" frameHeight="734" />
+<SubTexture name="happy0000" x="972" y="0" width="322" height="720" frameX="0" frameY="-1" frameWidth="329" frameHeight="734" />
+<SubTexture name="insecure0000" x="1294" y="0" width="324" height="720" frameX="0" frameY="-5" frameWidth="329" frameHeight="734" />
+<SubTexture name="sad0000" x="0" y="0" width="324" height="721" frameX="0" frameY="-4" frameWidth="329" frameHeight="734" />
+<SubTexture name="sigh0000" x="324" y="0" width="324" height="721" frameX="0" frameY="-4" frameWidth="329" frameHeight="734" />
 </TextureAtlas>

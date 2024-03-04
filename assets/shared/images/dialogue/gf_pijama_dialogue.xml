@@ -1,8 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <TextureAtlas imagePath="gf_pijama_dialogue.png">
-	<!-- Created with Adobe Animate version 22.0.4.185 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="curious0000" x="0" y="0" width="393" height="431"/>
-	<SubTexture name="happy0000" x="393" y="0" width="468" height="460"/>
-	<SubTexture name="worried0000" x="0" y="460" width="468" height="460"/>
+<SubTexture name="curious0000" x="667" y="0" width="310" height="411" frameX="-41" frameY="-14" frameWidth="393" frameHeight="431" />
+<SubTexture name="happy0000" x="0" y="0" width="363" height="417" frameX="-34" frameY="-37" frameWidth="468" frameHeight="460" />
+<SubTexture name="worried0000" x="363" y="0" width="304" height="415" frameX="-42" frameY="-39" frameWidth="468" frameHeight="460" />
 </TextureAtlas>

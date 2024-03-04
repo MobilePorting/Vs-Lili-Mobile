@@ -1,9 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <TextureAtlas imagePath="lili_sad_dialogue.png">
-	<!-- Created with Adobe Animate version 22.0.4.185 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="grateful0000" x="0" y="0" width="347" height="508"/>
-	<SubTexture name="nervous0000" x="347" y="0" width="354" height="508"/>
-	<SubTexture name="relief0000" x="0" y="508" width="349" height="511"/>
-	<SubTexture name="sad0000" x="349" y="508" width="346" height="509"/>
+<SubTexture name="grateful0000" x="683" y="0" width="345" height="496" frameX="-1" frameY="-12" frameWidth="347" frameHeight="508" />
+<SubTexture name="nervous0000" x="343" y="0" width="340" height="508" frameX="-11" frameY="0" frameWidth="354" frameHeight="508" />
+<SubTexture name="relief0000" x="0" y="0" width="343" height="510" frameX="0" frameY="-1" frameWidth="349" frameHeight="511" />
+<SubTexture name="sad0000" x="0" y="510" width="343" height="494" frameX="-1" frameY="-15" frameWidth="346" frameHeight="509" />
 </TextureAtlas>

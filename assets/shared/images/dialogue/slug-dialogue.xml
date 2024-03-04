@@ -1,9 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <TextureAtlas imagePath="slug-dialogue.png">
-	<!-- Created with Adobe Animate version 22.0.4.185 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="angry0000" x="0" y="0" width="774" height="829"/>
-	<SubTexture name="idle0000" x="774" y="0" width="417" height="745"/>
-	<SubTexture name="sarcastic0000" x="1191" y="0" width="812" height="833"/>
-	<SubTexture name="suprise0000" x="0" y="833" width="471" height="738"/>
+<SubTexture name="angry0000" x="370" y="0" width="355" height="733" frameX="-247" frameY="-33" frameWidth="774" frameHeight="829" />
+<SubTexture name="idle0000" x="725" y="0" width="353" height="732" frameX="-1" frameY="-10" frameWidth="417" frameHeight="745" />
+<SubTexture name="sarcastic0000" x="1078" y="0" width="351" height="726" frameX="-268" frameY="-26" frameWidth="812" frameHeight="833" />
+<SubTexture name="suprise0000" x="0" y="0" width="370" height="735" frameX="-20" frameY="0" frameWidth="471" frameHeight="738" />
 </TextureAtlas>

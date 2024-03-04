@@ -1,12 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <TextureAtlas imagePath="bf_dialogue_chair.png">
-	<!-- Created with Adobe Animate version 22.0.4.185 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="bruh0000" x="0" y="0" width="452" height="639"/>
-	<SubTexture name="chill0000" x="452" y="0" width="460" height="647"/>
-	<SubTexture name="confused0000" x="912" y="0" width="465" height="662"/>
-	<SubTexture name="happy0000" x="1377" y="0" width="437" height="635"/>
-	<SubTexture name="serious0000" x="0" y="662" width="440" height="624"/>
-	<SubTexture name="shock0000" x="440" y="662" width="517" height="629"/>
-	<SubTexture name="worried0000" x="957" y="662" width="437" height="635"/>
+<SubTexture name="bruh0000" x="427" y="0" width="408" height="603" frameX="0" frameY="-17" frameWidth="452" frameHeight="639" />
+<SubTexture name="chill0000" x="1241" y="0" width="425" height="598" frameX="-8" frameY="-43" frameWidth="460" frameHeight="647" />
+<SubTexture name="confused0000" x="0" y="0" width="427" height="622" frameX="-26" frameY="-34" frameWidth="465" frameHeight="662" />
+<SubTexture name="happy0000" x="835" y="0" width="406" height="603" frameX="-14" frameY="-26" frameWidth="437" frameHeight="635" />
+<SubTexture name="serious0000" x="406" y="622" width="411" height="601" frameX="-18" frameY="-17" frameWidth="440" frameHeight="624" />
+<SubTexture name="shock0000" x="1666" y="0" width="452" height="593" frameX="-14" frameY="-30" frameWidth="517" frameHeight="629" />
+<SubTexture name="worried0000" x="0" y="622" width="406" height="603" frameX="-14" frameY="-26" frameWidth="437" frameHeight="635" />
 </TextureAtlas>

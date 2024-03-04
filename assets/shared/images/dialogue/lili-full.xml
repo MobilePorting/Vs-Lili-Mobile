@@ -1,14 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <TextureAtlas imagePath="lili-full.png">
-	<!-- Created with Adobe Animate version 22.0.4.185 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="angry0000" x="0" y="0" width="378" height="790"/>
-	<SubTexture name="emotional0000" x="378" y="0" width="329" height="734"/>
-	<SubTexture name="excited0000" x="707" y="0" width="341" height="748"/>
-	<SubTexture name="happy0000" x="1048" y="0" width="329" height="734"/>
-	<SubTexture name="insecure0000" x="1377" y="0" width="329" height="734"/>
-	<SubTexture name="sad0000" x="1706" y="0" width="329" height="734"/>
-	<SubTexture name="sigh0000" x="0" y="790" width="329" height="734"/>
-	<SubTexture name="stop0000" x="329" y="790" width="520" height="802"/>
-	<SubTexture name="suprise0000" x="849" y="790" width="329" height="734"/>
+<SubTexture name="angry0000" x="0" y="0" width="317" height="772" frameX="-19" frameY="-16" frameWidth="378" frameHeight="790" />
+<SubTexture name="emotional0000" x="0" y="772" width="324" height="720" frameX="0" frameY="-5" frameWidth="329" frameHeight="734" />
+<SubTexture name="excited0000" x="764" y="0" width="339" height="736" frameX="0" frameY="-11" frameWidth="341" frameHeight="748" />
+<SubTexture name="happy0000" x="324" y="772" width="322" height="720" frameX="0" frameY="-1" frameWidth="329" frameHeight="734" />
+<SubTexture name="insecure0000" x="646" y="772" width="324" height="720" frameX="0" frameY="-5" frameWidth="329" frameHeight="734" />
+<SubTexture name="sad0000" x="1103" y="0" width="324" height="721" frameX="0" frameY="-4" frameWidth="329" frameHeight="734" />
+<SubTexture name="sigh0000" x="1427" y="0" width="324" height="721" frameX="0" frameY="-4" frameWidth="329" frameHeight="734" />
+<SubTexture name="stop0000" x="317" y="0" width="447" height="771" frameX="-46" frameY="-27" frameWidth="520" frameHeight="802" />
+<SubTexture name="suprise0000" x="970" y="772" width="322" height="720" frameX="0" frameY="-1" frameWidth="329" frameHeight="734" />
 </TextureAtlas>

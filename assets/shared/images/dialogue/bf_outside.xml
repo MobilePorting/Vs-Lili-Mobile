@@ -1,14 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <TextureAtlas imagePath="bf_outside.png">
-	<!-- Created with Adobe Animate version 22.0.4.185 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="calm down0000" x="0" y="0" width="394" height="468"/>
-	<SubTexture name="determinado0000" x="394" y="0" width="394" height="427"/>
-	<SubTexture name="duda0000" x="788" y="0" width="386" height="432"/>
-	<SubTexture name="enojado0000" x="1174" y="0" width="349" height="431"/>
-	<SubTexture name="feliz left0000" x="1523" y="0" width="394" height="452"/>
-	<SubTexture name="feliz up0000" x="0" y="468" width="394" height="451"/>
-	<SubTexture name="molesto0000" x="394" y="468" width="349" height="431"/>
-	<SubTexture name="pelea0000" x="743" y="468" width="394" height="428"/>
-	<SubTexture name="really0000" x="1137" y="468" width="359" height="424"/>
+<SubTexture name="calm down0000" x="1075" y="0" width="368" height="421" frameX="-18" frameY="-41" frameWidth="394" frameHeight="468" />
+<SubTexture name="determinado0000" x="0" y="430" width="392" height="426" frameX="0" frameY="0" frameWidth="394" frameHeight="427" />
+<SubTexture name="duda0000" x="352" y="856" width="369" height="410" frameX="-5" frameY="-16" frameWidth="386" frameHeight="432" />
+<SubTexture name="enojado0000" x="0" y="0" width="343" height="430" frameX="0" frameY="0" frameWidth="349" frameHeight="431" />
+<SubTexture name="feliz left0000" x="1075" y="421" width="347" height="417" frameX="-22" frameY="-29" frameWidth="394" frameHeight="452" />
+<SubTexture name="feliz up0000" x="0" y="856" width="352" height="414" frameX="-35" frameY="-31" frameWidth="394" frameHeight="451" />
+<SubTexture name="molesto0000" x="343" y="0" width="345" height="429" frameX="-4" frameY="-2" frameWidth="349" frameHeight="431" />
+<SubTexture name="pelea0000" x="688" y="0" width="387" height="427" frameX="-3" frameY="0" frameWidth="394" frameHeight="428" />
+<SubTexture name="really0000" x="392" y="430" width="357" height="424" frameX="0" frameY="0" frameWidth="359" frameHeight="424" />
 </TextureAtlas>
