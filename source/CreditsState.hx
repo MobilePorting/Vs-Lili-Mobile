@@ -86,6 +86,7 @@ class CreditsState extends MusicBeatState
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
                         ['Mobile Port'],
                         ['mcagabe19',                           'lily',                         'Head Porter of Vs Lili',                              'https://www.youtube.com/@mcagabe19',           'FFE7C0'],
+                        [''],
 			['Vs Lili Team'],
 			['Hink Lux',			'hinkicon',			'Director of vs Lili\n/artist/musican/charter',										'https://www.youtube.com/channel/UCDiX3ugKh5sMOMX7GPKrhyA',		'F8F1EF'],
 			['Pomelo 77',			'pomeloicon',		'Main musician/charter/lead programmer',											'https://twitter.com/LeCitron77',		'FF8000'],
