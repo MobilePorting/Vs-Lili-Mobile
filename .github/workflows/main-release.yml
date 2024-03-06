@@ -239,3 +239,4 @@ jobs:
           files: |
             /home/runner/*.apk
             /home/runner/*.zip
+            /home/runner/*.tar.gz
