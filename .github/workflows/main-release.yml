@@ -53,7 +53,7 @@ jobs:
         run: haxelib run lime build linux -final
 
       - name: Make Tar For Release
-        run: tar -cf export/release/linux/bin/VsLili-Linux.tar export/release/linux/bin/*
+        run: tar czf export/release/linux/bin/VsLili-Linux.tar.gz export/release/linux/bin/*
 
       - name: Upload Artifact
         if: ${{ success() }}
@@ -86,7 +86,7 @@ jobs:
         run: haxelib run lime build mac -final
 
       - name: Make Tar For Release
-        run: tar -cf export/release/linux/bin/VsLili-macOS${{matrix.version}}.tar export/release/macos/bin/*
+        run: tar czf export/release/macos/bin/VsLili-macOS${{matrix.version}}.tar.gz export/release/macos/bin/*
 
       - name: Upload Artifact
         if: ${{ success() }}
