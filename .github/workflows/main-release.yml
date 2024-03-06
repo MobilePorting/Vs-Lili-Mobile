@@ -60,7 +60,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: linuxBuild
-          path: export/release/linux/bin/*.tar
+          path: export/release/linux/bin/*.tar.gz
           if-no-files-found: error
   macOS:
     runs-on: macos-${{matrix.version}}
@@ -93,7 +93,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: macOSBuild-${{matrix.version}}
-          path: export/release/macos/bin/*.tar
+          path: export/release/macos/bin/*.tar.gz
           if-no-files-found: error
   Android:
     runs-on: ubuntu-latest
@@ -134,7 +134,7 @@ jobs:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
       - name: Compile
-        run: haxelib run lime build android -final
+        run: haxelib run lime build android -final && mv export/release/android/bin/app/build/outputs/apk/release/*.apk export/release/android/bin/app/build/outputs/apk/release/VsLili-Android.apk
 
       - name: Upload Artifact
         if: ${{ success() }}
@@ -168,12 +168,12 @@ jobs:
           cd export/release/ios/build/*-iphoneos
           mkdir Payload
           mv *.app Payload
-          zip -r VsLili.ipa Payload
+          zip -r VsLili-iOS.ipa Payload
 
       - name: Make Zip For Release
         run: |
            cd export/release/ios/build/Release-iphoneos
-           zip VsLili-iOS.zip VsLili.ipa
+           zip VsLili-iOS.zip VsLili-iOS.ipa
 
       - name: Upload Artifact
         if: ${{ success() }}
@@ -182,3 +182,60 @@ jobs:
           name: iOSBuild
           path: export/release/ios/build/Release-iphoneos/*.zip
           if-no-files-found: error
+  Releaser:
+    needs: [Android, iOS, Windows, Linux, macOS]
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: Download Android Build
+        uses: actions/download-artifact@main
+        with:
+           name: androidBuild
+           path: /home/runner
+
+      - name: Download iOS Build
+        uses: actions/download-artifact@main
+        with:
+           name: iOSBuild
+           path: /home/runner
+
+      - name: Download Windows Build
+        uses: actions/download-artifact@main
+        with:
+           name: windowsBuild
+           path: /home/runner
+
+      - name: Download Linux Build
+        uses: actions/download-artifact@main
+        with:
+           name: linuxBuild
+           path: /home/runner
+
+      - name: Download macOS 11 Build
+        uses: actions/download-artifact@main
+        with:
+           name: macOSBuild-11
+           path: /home/runner
+
+      - name: Download macOS 12 Build
+        uses: actions/download-artifact@main
+        with:
+           name: macOSBuild-12
+           path: /home/runner
+
+      - name: Download macOS 13 Build
+        uses: actions/download-artifact@main
+        with:
+           name: macOSBuild-13
+           path: /home/runner
+
+      - name: Publish The Release
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          automatic_release_tag: "1.5"
+          title: "1.5"
+          files: |
+            /home/runner/*.apk
+            /home/runner/*.zip
